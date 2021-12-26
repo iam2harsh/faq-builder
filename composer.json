@@ -1,0 +1,24 @@
+{
+    "name": "iam2harsh/faqs-builder",
+    "description": "A nice way to build FAQs section of your web application.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Iam2harsh\\FaqsBuilder\\": "src/",
+            "Iam2harsh\\FaqsBuilder\\Tests\\": "tests"
+        }
+    },
+    "authors": [
+        {
+            "name": "Harsh",
+            "email": "admin@iam2harsh.dev"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "spatie/phpunit-snapshot-assertions": "dev-main",
+        "phpunit/phpunit": "9.5.x-dev",
+        "orchestra/testbench": "6.x-dev"
+    }
+}

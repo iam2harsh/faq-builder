@@ -1,0 +1,10 @@
+{
+    "title": "test",
+    "faqs": [
+        {
+            "question": "What is the name of this test model?",
+            "answer": "test model",
+            "active": false
+        }
+    ]
+}

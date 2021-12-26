@@ -1,0 +1,10 @@
+{
+    "title": "test faqs",
+    "faqs": [
+        {
+            "question": "What is the meaning of life?",
+            "answer": "The answer to that question is 42",
+            "active": false
+        }
+    ]
+}
