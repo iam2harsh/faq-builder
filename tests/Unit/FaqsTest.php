@@ -128,4 +128,34 @@ class FaqsTest extends TestCase
 
         $this->assertEmpty($faqs['faqs']);
     }
+
+    /** @test **/
+    public function question_is_shown_unless_false(): void
+    {
+        $faqs = Faqs::make('test')
+            ->unless(false, static function (\Iam2harsh\FaqsBuilder\Faqs $faqs): void {
+                $faqs->addQuestions(function () {
+                    return Question::make('Will this test question be hidden?')
+                        ->answer('No this test question should not be hidden.');
+                });
+            })
+            ->render();
+
+        $this->assertMatchesJsonSnapshot($faqs);
+    }
+
+    /** @test **/
+    public function question_is_not_shown_unless_true(): void
+    {
+        $faqs = Faqs::make('test')
+            ->unless(true, static function (\Iam2harsh\FaqsBuilder\Faqs $faqs): void {
+                $faqs->addQuestions(function () {
+                    return Question::make('Can this test question be hidden?')
+                        ->answer('Yes some test questions can be hidden.');
+                });
+            })
+            ->render();
+
+        $this->assertEmpty($faqs['faqs']);
+    }
 }

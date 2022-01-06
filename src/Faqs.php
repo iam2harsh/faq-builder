@@ -2,13 +2,13 @@
 
 namespace Iam2harsh\FaqsBuilder;
 
-use Iam2harsh\FaqsBuilder\Concerns\HasWhen;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Support\Traits\Conditionable;
 
 class Faqs
 {
-    use HasWhen;
+    use Conditionable;
 
     /** @var \Illuminate\Support\Collection */
     protected $questions = [];
